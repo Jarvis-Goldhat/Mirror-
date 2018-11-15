@@ -14,7 +14,7 @@ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key ad
 
 sudo apt-get update
 sudo apt-get upgrade
-Reboot after update:
+#Reboot after update:
 
 sudo reboot
 #AIY Packages
@@ -60,36 +60,36 @@ mkdir -p ~/.config/pulse/
 echo "default-sample-rate = 48000" > ~/.config/pulse/daemon.conf
 sudo apt-get install aiy-dkms aiy-voicebonnet-soundcard-dkms aiy-voicebonnet-routes
 sudo reboot
-In addition you can install package aiy-python-wheels for better performance:
+#In addition you can install package aiy-python-wheels for better performance:
 
 sudo apt-get install aiy-python-wheels
-You should be able to record
+#You should be able to record
 
 arecord -f cd test.wav
-and play
+#and play
 
 aplay test.wav
-sound right now.
+#sound right now.
 
-Vision/Voice Bonnet Additional Setup
-Install LED driver to control button RGB LED:
+#Vision/Voice Bonnet Additional Setup
+#Install LED driver to control button RGB LED:
 
 sudo apt-get install leds-ktd202x-dkms
-Install Software PWM driver to control buzzer:
+#Install Software PWM driver to control buzzer:
 
 sudo apt-get install pwm-soft-dkms
 echo "pwm-soft" | sudo tee -a /etc/modules
 sudo modprobe pwm-soft
-Python Library
-Installation
-Install git first:
+#Python Library
+#Installation
+#Install git first:
 
 sudo apt-get install git
-Then clone aiyprojects-raspbian repo from GitHub:
+#Then clone aiyprojects-raspbian repo from GitHub:
 
 git clone https://github.com/google/aiyprojects-raspbian.git AIY-projects-python
-And install library in editable mode:
+#And install library in editable mode:
 
 sudo pip3 install -e AIY-projects-python/src
-Cloud access for Voice HAT or Voice Bonnet
-To access the cloud services you need to register a project and generate credentials for cloud APIs. This is documented in the setup instructions on the webpage.
+#Cloud access for Voice HAT or Voice Bonnet
+#To access the cloud services you need to register a project and generate credentials for cloud APIs. This is documented in the setup instructions on the webpage.
